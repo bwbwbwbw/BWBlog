@@ -26,9 +26,9 @@ node_modules
 
 /.htaccess
 config.php
-!.gitkeep
 /vendor
 /runtime/rss.xml
 /runtime/twig_cache/*
 /runtime/htmlpurifier_cache/*
 /themes/breezewish
+!.gitkeep
