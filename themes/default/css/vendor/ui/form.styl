@@ -1,0 +1,58 @@
+.textbox
+    margin      0
+    box-sizing  content-box
+    height      26px
+    line-height 26px
+    outline     0
+    padding     4px
+    border      1px solid $textbox-border-color
+    transition  border-color .2s linear, background .2s linear
+    background  $textbox-bg-color
+.textbox:hover
+    border-color $textbox-hover-border-color
+    background  $textbox-hover-bg-color
+.textbox:focus
+    border-color $focus-color
+    background  $textbox-hover-bg-color
+    box-shadow  $focus-box-shadow
+
+.button
+    cursor      default
+    user-select none
+    display     inline-block
+    *display    inline
+    height      28px
+    box-sizing  content-box
+    padding     4px 25px
+    line-height 28px
+    border      none
+    background  $button-color
+    margin      0 2px
+    transition  background-color .2s linear, box-shadow .2s linear
+.button:hover
+    background  $button-color-hover
+.button:focus
+    box-shadow  $focus-box-shadow
+    outline     $focus-border
+.button:active
+    background  $button-color-active
+
+.button-big
+    padding     15px 50px
+    font-size   1.5em
+    font-weight 300
+
+.button-def
+    background  $button-def-color
+    color       $bg-color
+.button-def:hover
+    background  $button-def-color-hover
+.button-def:active
+    background  $button-def-color-active
+
+.form-line
+    padding     10px 0
+.form-line-big
+    padding     20px 0
+.form-line-extrabig
+    padding     40px 0

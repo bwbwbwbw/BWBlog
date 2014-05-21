@@ -1,0 +1,13 @@
+{
+    "name":"theme-grunt",
+    "version":"0.0.1",
+    "dependencies":{
+        "grunt":"*",
+        "grunt-contrib-watch":"*",
+        "grunt-contrib-copy":"*",
+        "grunt-contrib-stylus":"*",
+        "grunt-contrib-cssmin":"*",
+        "grunt-autoprefixer":"*",
+        "grunt-contrib-uglify":"*"
+    }
+}

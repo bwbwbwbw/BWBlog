@@ -1,0 +1,16 @@
+{% set BODY_CLASS = 'login' %}
+{% extends "layout.twig" %}
+{% block body %}
+<div class="dialog-login">
+    <form action="login" method="POST" class="role-form">
+    <h3>&lt;BWBlog/&gt;</h3>
+    <div class="form-line"><input type="text" class="textbox role-username" placeholder="Username" name="username"></div>
+    <div class="form-line"><input type="password" class="textbox role-password" placeholder="Password" name="password"></div>
+    <div class="form-line"><input type="submit" class="button button-def role-login" value="LOGIN"></div>
+    </form>
+</div>
+{% endblock %}
+{% block footer %}
+<script type="text/javascript" src="{{ view_static('/js/sha1.js') }}"></script>
+<script type="text/javascript" src="{{ view_static('/js/login.js') }}"></script>
+{% endblock %}

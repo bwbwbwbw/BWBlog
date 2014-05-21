@@ -1,0 +1,38 @@
+<?php
+
+//============================
+// Application Settings
+const APP_NAME           = 'BWBlog';        // do not change
+const APP_VERSION        = '0.0.1 beta';    // do not change
+
+//============================
+// Settings
+const CONFIG_ENFORCESSL  = false;           // turn it on if you have SSL certificates
+const CONFIG_DEBUG       = true;            // enable debug output?
+const CONFIG_HOST        = 'example.com';   // your blog domain
+const CONFIG_TIMEZONE    = 'Asia/Shanghai'; // time zone
+const CONFIG_DATE_FORMAT = 'dS F, Y';       // date format
+const CONFIG_TIME_FORMAT = 'h:i:s A';       // time format
+// Preferences
+const P_PREFIX           = '';              // if not in root directory, please modify its value.
+                                            // for example, if your blog is example.com/blog,
+                                            // set the value to '/blog'
+const P_THEME            = 'default';       // the theme to use
+const P_POSTS_PER_PAGE   = 10;              // show how many posts per page
+const P_TITLE            = 'My Blog';       // your blog title
+const P_DISQUS_ID        = 'example';       // your Disqus shortname
+
+//============================
+// Database
+const MONGO_PREFIX       = 'blog-';                     // Collection prefix
+const MONGO_PATH         = 'mongodb://127.0.0.1:27017'; // connect string
+const MONGO_DB           = 'swx';                       // database name
+const MONGO_USERNAME     = 'swx';                       // auth username
+const MONGO_PASSWORD     = 'swx';                       // auth password
+const MONGO_TIMEOUT      = 2000;                        // connect timeout
+
+//============================
+// Manage
+const ADMIN_USER         = 'swx';                       // admin username
+const ADMIN_PASS         = '0000000000000000000000000000000000000000';
+// SHA1 your password for 12 times, then replace the value here

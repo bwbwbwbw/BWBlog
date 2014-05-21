@@ -1,0 +1,17 @@
+{% set BODY_CLASS = 'main' %}
+{% extends "layout.twig" %}
+{% block content %}
+<div class="index-left">
+{% for POST in POSTS %}
+<div class="post-item" data-id="{{ POST._id }}">
+<div class="post-border"></div>
+<div class="post-title"><h3>{{ POST.title }}</h3></div>
+<div class="post-time"><span class="icon-time"></span> {% if POST.state == 1 %}Published {% endif %}{{ POST.time.main|elapsed }}{% if POST.state == 0 %}<span class="draft">(Draft)</span>{% elseif POST.state == 2 %}<span class="page">(Page)</span>{% endif %}</div>
+</div>
+{% endfor %}
+</div>
+<div class="index-right"><div class="index-action" style="display:none;"><a href="javascript:;" class="action-edit index-action-item"><span class="icon-edit"> EDIT</span></a></div><div class="index-right-content"><div class="index-hello"><div><h1>Welcome to BWBlog</h3></div><div><h3>{{ APP_NAME }} {{ APP_VERSION }}</h3></div></div></div></div>
+{% endblock %}
+{% block footer %}
+<script type="text/javascript" src="{{ view_static('/js/dashboard.js') }}"></script>
+{% endblock %}

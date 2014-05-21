@@ -1,0 +1,9 @@
+{
+    "require": {
+        "ezyang/htmlpurifier": "4.*",
+        "filp/whoops": "1.*",
+        "kzykhys/ciconia": "1.1.*@dev",
+        "twig/twig": "1.*",
+        "openpsa/universalfeedcreator": "dev-master"
+    }
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="chrome=1"/>
+<title>{% if TITLE is defined %}{{ TITLE }} - {% endif %}{{ TITLE_SUFFIX }}</title>
+<script type="text/javascript">
+if(top.location!==self.location){top.location=self.location}else{if(top!==self){if(confirm("Reload?")){top.location.reload()}}};
+</script>
+<link href="{{ view_static('/css/css.css') }}" rel="stylesheet" type="text/css" charset="UTF-8" />
+{% block header %}{% endblock %}
+</head>
+<body>
+{% include "header.twig" %}
+<div class="page-content">
+<div class="cont-wrap"><div class="grid_8">
+{% block content %}{% endblock %}
+</div><div class="grid_1">&nbsp;</div><div class="grid_3">
+<div class="sidebar">
+{% block sidebar %}{% endblock %}
+</div>
+</div><div class="clear"></div></div>
+</div>
+{% include "footer.twig" %}
+{% block footer %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,40 @@
+{% extends "layout.twig" %}
+{% block content %}
+{% if POSTS|length > 0 %}
+<div class="post-list">
+{% for POST in POSTS %}
+<div class="post">
+    <div class="post-title"><h2><a href="{{ P_PREFIX }}/{{ POST.rest_url }}/">{{ POST.title }}</a></h2></div>
+    <div class="post-info">
+    <div class="post-time">Published at {{ POST.time.main|date }}</div>
+{% if POST.category|length > 0 %}
+    <div class="post-category">Category: <a href="{{ P_PREFIX }}/category/{{ POST.category|lower }}/">{{ POST.category }}</a></div>
+{% endif %}
+{% if POST.tags|length > 0 %}
+    <div class="post-tags">Tags: 
+{% for TAG in POST.tags %}
+<a href="{{ P_PREFIX }}/tag/{{ TAG|lower }}/">{{ TAG }}</a>&nbsp;
+{% endfor %}
+    </div>
+{% endif %}
+    </div>
+    <div class="post-body">{% autoescape false %}{{ POST.content.introhtml }}{% endautoescape %}{% if POST.content.more %}<div class="post-more"><a href="{{ P_PREFIX }}/{{ POST.rest_url }}/">Read More »</a></div>{% endif %}</div>
+</div>
+{% endfor %}
+</div>
+<div class="post-nav">
+{% if PAGE > 1 %}<a class="post-nav-page" href="{{ P_PREFIX }}{{ BASE_URI }}{{ PAGE - 1 }}">&lt;</a>{% endif %}
+{% for PG in 1..PAGE_COUNT %}
+<a class="post-nav-page{% if PG == PAGE %} post-nav-page-current{% endif %}" href="{{ P_PREFIX }}{{ BASE_URI }}{{ PG }}">{{ PG }}</a>
+{% endfor %}
+{% if PAGE < PAGE_COUNT %}<a class="post-nav-page" href="{{ P_PREFIX }}{{ BASE_URI }}{{ PAGE + 1 }}">&gt;</a>{% endif %}
+<div class="clear"></div>
+</div>
+{% else %}
+<div class="no-posts">No posts :(</div>
+{% endif %}
+{% endblock %}
+{% block sidebar %}
+{% include "sidebar/category.twig" %}
+{% include "sidebar/tags.twig" %}
+{% endblock %}

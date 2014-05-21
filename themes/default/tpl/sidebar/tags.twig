@@ -1,0 +1,11 @@
+{% set TAGS = get_tags() %}
+<div class="sidebar-module sidebar-tags">
+    <h3>TAGS</h3>
+    <div class="sidebar-body"><ul class="sidebar-list">
+{% for TAG in TAGS %}
+{% if TAG.name|length > 0 %}
+        <li class="sidebar-item"><a href="{{ P_PREFIX }}/tag/{{ TAG.name|lower }}">{{ TAG.name }} ({{ TAG.count }})</a></li>
+{% endif %}
+{% endfor %}
+    </ul></div>
+</div>

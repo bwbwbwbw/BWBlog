@@ -1,0 +1,11 @@
+{% set CATALOGS = get_catalogs() %}
+<div class="sidebar-module sidebar-catalogs">
+    <h3>CATEGORY</h3>
+    <div class="sidebar-body"><ul class="sidebar-list">
+{% for CATALOG in CATALOGS %}
+{% if CATALOG.name|length > 0 %}
+        <li class="sidebar-item"><a href="{{ P_PREFIX }}/category/{{ CATALOG.name|lower }}">{{ CATALOG.name }} ({{ CATALOG.count }})</a></li>
+{% endif %}
+{% endfor %}
+    </ul></div>
+</div>

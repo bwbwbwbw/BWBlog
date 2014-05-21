@@ -1,0 +1,81 @@
+body
+    background      $bg-color
+
+.no-posts, .not-found
+    color           lighten($text-color, 50%)
+
+// Post
+.post
+    margin-bottom   50px
+
+.post-body
+    margin          20px 0 10px 20px
+    img
+        max-width       100%
+
+.post-body
+    color           lighten($text-color, 10%)
+
+.post-body p
+    line-height     1.7em
+
+.post-title a,
+.post-title a:visited,
+.post-title a:active
+    position        relative
+    color           $text-color
+    text-decoration none
+    transition      color .2s linear
+.post-title a:hover
+    color           darken($link-color, 5%)
+    text-decoration none
+
+.post-info
+    font-size       0.9em
+    margin-left     20px
+    line-height     1.7em
+    color           lighten($text-color, 40%)
+
+.post-info a, .post-info a:visited, .post-info a:hover, .post-info a:active
+    color           lighten($text-color, 20%)
+
+// Page Navigation
+.post-nav-page
+    display         block
+    float           left
+    background      darken($bg-color, 5%)
+    line-height     30px
+    width           29px
+    margin-right    1px
+    text-align      center
+    font-size       0.8em
+
+.post-nav-page, .post-nav-page:visited, .post-nav-page:active, .post-nav-page:hover
+    color           $text-color
+.post-nav-page:hover
+    background      darken($bg-color, 7%)
+    text-decoration none
+.post-nav-page-current
+    background      darken($bg-color, 80%)!important
+    color           #FFF!important
+.post-nav-page-current:hover
+    background      darken($bg-color, 60%)!important
+    color           #FFF
+
+// Sidebar
+.sidebar-module
+    margin-bottom   30px
+
+.sidebar-module h3
+    color           lighten($text-color, 70%)
+
+.sidebar-body
+    line-height     2em
+
+    ul, li
+        list-style  none
+        padding     0
+        margin      0
+
+.sidebar-body a, .sidebar-body a:visited, .sidebar-body a:hover, .sidebar-body a:active
+    color           lighten($text-color, 40%)

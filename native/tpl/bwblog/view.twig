@@ -1,0 +1,10 @@
+<div class="post-main">
+<div class="post-main-title"><h2>{{ POST.title }}</h2></div>
+<div class="post-main-url"><a href="{{ P_PREFIX }}/{{ POST.rest_url }}" target="_blank">{{ P_PREFIX }}/{{ POST.rest_url }}</a></div>
+{% if POST.category|length > 0 %}<div class="post-main-category"><span class="icon-category"></span> {{ POST.category }}</div>{% endif %}
+{% if POST.tags|length > 0 %}<div class="post-main-tags"><span class="icon-tag"></span> {{ POST.tags|join(', ') }}</div>{% endif %}
+<div class="post-main-time"><span class="icon-time"></span> {% if POST.state == 1 %}Published @ {% endif %}{{ POST.time.main|datetime }}{% if POST.state == 0 %}<span class="draft">(Draft)</span>{% elseif POST.state == 2 %}<span class="page">(Page)</span>{% endif %}</div>
+{% autoescape false %}
+<div class="post-main-content">{{ POST.content.html }}</div>
+{% endautoescape %}
+</div>

@@ -1,0 +1,224 @@
+.button
+    font-weight     300
+
+.body-login
+    background      #333 url(../img/texture.png) top center
+
+.body-main
+    background      #E5E5E5
+
+.dialog-login
+    text-align      center
+    width           250px
+    padding         40px
+    margin          0 auto
+    margin-top      200px
+    background      #F0F0F0
+    border-top      5px solid #CCC
+    box-shadow      0 0 10px #000
+
+.bw-page-header
+    background      #222
+    color           #CCC
+
+.bw-page-header-item
+    float           left
+    display         block
+    padding         8px 15px 10px 15px
+    transition      background-color .2s linear, color .2s linear
+    font-size       14px
+    line-height     22px
+    font-weight     300
+.bw-page-header-item, .bw-page-header-item:visited, .bw-page-header-item:active
+    color           #CCC
+.bw-page-header-item:hover
+    color           #FFF
+    text-decoration none
+    background      rgba(#FFF, 0.2)
+    padding-bottom  8px
+    border-bottom   2px solid $link-color
+.bw-page-header-item .icon
+    margin-right    10px
+
+$padding = 10px
+$index-sidebar-width = 400px
+
+.index-left, .index-right
+    position        absolute
+    top             (40px + $padding)
+    bottom          $padding
+
+.index-left
+    left            $padding
+    width           $index-sidebar-width
+    background      #F6F6F6
+    overflow-y      auto
+
+.index-right
+    right           $padding
+    left            ($index-sidebar-width + $padding)
+    border-left     1px solid #DDD
+    background      #F0F0F0
+    overflow-y      auto
+    padding         20px
+
+.index-action
+    position        absolute
+    right           20px
+    top             30px
+    font-size       0.8em
+    z-index         5
+
+.index-action-item, .index-action-item:visited, .index-action-item:active
+    background      $link-color
+    color           #FFF
+    display         inline-box
+    padding         7px 10px
+.index-action-item:hover
+    background      $link-color-hover
+    text-decoration none
+
+.index-right-content
+    position        relative
+    width           100%
+    height          100%
+    overflow-y      auto
+
+.write-top
+    position        absolute
+    top             (40px + $padding)
+    left            $padding
+    right           $padding
+
+.write-bottom
+    position        absolute
+    bottom          $padding
+    left            $padding
+    right           $padding
+    color           #AAA
+    font-size       0.8em
+
+.role-title, .role-url
+    display         inline-block
+    box-sizing      border-box
+    height          35px
+    width           50%
+
+.role-tags, .role-category, .role-time
+    display         inline-block
+    margin          0 15px 0 8px
+.role-category
+    width           100px
+.role-tags
+    width           300px
+.role-time
+    width           200px
+
+.editorwrap
+    position        absolute
+    top             (75px + $padding * 2)
+    bottom          (35px + $padding * 2)
+    left            $padding
+    right           $padding
+
+.entry-markdown, .entry-preview
+    overflow        hidden
+
+.editor .floatingheader
+    cursor          pointer
+    color           #C8C8C8
+    position        absolute
+    left            0
+    top             0
+    right           0
+    padding         10px
+    background      rgba(#FFF, 0.8)
+    font-size       0.9em
+    z-index         10
+    transition      box-shadow .2s linear
+
+.editor .scrolling .floatingheader
+    text-shadow     1px 1px 2px #FFF
+    box-shadow      0 3px 10px rgba(#000, 0.1)
+
+.post-item
+    cursor          pointer
+    position        relative
+    padding         15px 15px 15px 20px
+    border-bottom   1px solid #EEE
+    transition      background-color .2s linear
+
+.post-item:hover
+    background      rgba(#FFF, 0.4)
+
+.post-item-active
+    cursor          default!important
+    background      rgba(#FFF, 0.6)!important
+
+.post-border
+    position        absolute
+    left            0
+    top             0
+    width           0
+    height          100%
+    transition      all .2s linear
+
+$stripe-size = 20px
+$stripe-color-fore = rgba(#FFF, 0.4)
+$stripe-color-back = transparent
+
+.post-item:hover .post-border
+    width           5px
+    background      #EEE
+    background-size   $stripe-size $stripe-size!important
+    background-image  linear-gradient(
+        45deg, 
+        $stripe-color-fore   25%, 
+        $stripe-color-back   25%, 
+        $stripe-color-back   50%, 
+        $stripe-color-fore   50%, 
+        $stripe-color-fore   75%, 
+        $stripe-color-back   75%, 
+        $stripe-color-back
+    )!important
+    animation         post-item-animation 1s linear infinite!important
+
+.post-item-active .post-border
+    width           5px!important
+    background      $link-color!important
+
+@keyframes post-item-animation
+    from
+        background-position 0 0
+    to
+        background-position 0 ($stripe-size - 1)
+
+.post-time
+    color           #AAA
+    font-size       0.8em
+
+.index-hello
+    padding-top     100px
+    text-align      center
+    opacity         0.2
+
+.post-main-url
+    margin-bottom   15px
+    margin-top      5px
+
+.post-main-time, .post-main-category, .post-main-tags
+    color           #AAA
+    line-height     2em
+    font-size       0.9em
+
+.post-main-content
+    margin-top      20px
+
+.post-time, .post-main-time
+    .draft
+        margin-left     10px
+        color           $post-draft-color
+
+    .page
+        margin-left     10px
+        color           $post-page-color
