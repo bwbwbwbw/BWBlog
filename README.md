@@ -31,9 +31,9 @@ MongoDB >= 2.2
    chmod -R 777 runtime
    ```
 
-3. See [Blog Configuration](#Blog-Configuration)
+3. See [Blog Configuration](#blog-configuration)
 
-4. See [Web Server Configuration](#Web-Server-Configuration)
+4. See [Web Server Configuration](#web-server-configuration)
 
 5. Visit `/bwblog` to access the dashboard and start your writing!
 
