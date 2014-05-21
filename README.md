@@ -4,13 +4,17 @@ BWBlog
 A lightweight and super fast PHP blog system.
 
 - Use Markdown when writing.
-- Use MongoDB as database storage
+
+- Use MongoDB as database storage.
+
 - Use [Disqus](http://disqus.com/) as discussion provider.
 
 ## Requirement
 
 PHP >= 5.4
+
 MongoDB >= 2.2
+
 [Composer](https://getcomposer.org/)
 
 ## Setup
@@ -98,6 +102,7 @@ Default: `h:i:s A`
 The prefix of all URLs.
 
 If the blog is under your root web directory (for example, visit via `http://example.com`), leave it blank (default);
+
 If not (for example, visit via `http://example.com/my/blog`), set the value to the directory: `/my/blog`.
 
 Default: (empty)
@@ -199,7 +204,9 @@ Learn more: [Grunt getting started](http://gruntjs.com/getting-started)
 ## TODO
 
 1. Support auto-save when writing
+
 2. Support delete post.
+
 3. Show pages somewhere.
 
 ## Request A New Feature (NFR)
