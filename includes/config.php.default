@@ -6,6 +6,12 @@ const APP_NAME           = 'BWBlog';        // do not change
 const APP_VERSION        = '0.0.1 beta';    // do not change
 
 //============================
+// Manage
+const ADMIN_USER         = 'swx';                       // admin username
+const ADMIN_PASS         = '0000000000000000000000000000000000000000';
+// SHA1 your password for 12 times, then replace the value here
+
+//============================
 // Settings
 const CONFIG_ENFORCESSL  = false;           // turn it on if you have SSL certificates
 const CONFIG_DEBUG       = true;            // enable debug output?
@@ -30,9 +36,3 @@ const MONGO_DB           = 'swx';                       // database name
 const MONGO_USERNAME     = 'swx';                       // auth username
 const MONGO_PASSWORD     = 'swx';                       // auth password
 const MONGO_TIMEOUT      = 2000;                        // connect timeout
-
-//============================
-// Manage
-const ADMIN_USER         = 'swx';                       // admin username
-const ADMIN_PASS         = '0000000000000000000000000000000000000000';
-// SHA1 your password for 12 times, then replace the value here
