@@ -73,8 +73,8 @@ module.exports = function (grunt)
           {
                css:
                {
-                    files: ['themes/*/css/**/*.styl', 'native/css/**/*.styl'],
-                    tasks: ['stylus', 'autoprefixer']
+                    files: ['themes/*/js/**/*.js', '!themes/*/js/*.min.js', 'themes/*/css/**/*.styl', 'native/css/**/*.styl'],
+                    tasks: ['stylus', 'autoprefixer', 'copy']
                }
           }
 
