@@ -19,7 +19,7 @@ function autoloader($className) {
 spl_autoload_register('autoloader');
 
 // SSL
-define('ENV_SSL', isset($_SERVER['SSL_SESSION_ID']) && strlen($_SERVER['SSL_SESSION_ID']) > 0);
+define('ENV_SSL', isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on');
 define('ENV_HOST', $_SERVER['HTTP_HOST']);
 
 if (CONFIG_ENFORCESSL) {
