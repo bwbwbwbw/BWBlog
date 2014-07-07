@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "ad195f556036fffcf14ef3a5e1c6e192",
+    "hash": "0eff6baf0d84af9de4d2a33fbeb7b2f2",
     "packages": [
         {
             "name": "ezyang/htmlpurifier",
@@ -109,65 +109,6 @@
             "time": "2014-05-13 05:05:11"
         },
         {
-            "name": "kzykhys/ciconia",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/kzykhys/Ciconia.git",
-                "reference": "94e9c7564d0fe00eafa6800176ff42147958f855"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/kzykhys/Ciconia/zipball/94e9c7564d0fe00eafa6800176ff42147958f855",
-                "reference": "94e9c7564d0fe00eafa6800176ff42147958f855",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">5.4.0",
-                "symfony/console": ">=2.3,<2.5-dev",
-                "symfony/options-resolver": ">=2.3,<2.5-dev"
-            },
-            "require-dev": {
-                "kzykhys/pygments": ">=1.0",
-                "symfony/finder": ">=2.3,<2.5-dev",
-                "symfony/stopwatch": ">=2.3,<2.5-dev"
-            },
-            "suggest": {
-                "kzykhys/pygments": ">=1.0"
-            },
-            "bin": [
-                "bin/ciconia"
-            ],
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.1.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Kazuyuki Hayashi",
-                    "email": "hayashi@valnur.net"
-                }
-            ],
-            "description": "The Markdown parser for PHP5.4",
-            "keywords": [
-                "cli",
-                "markdown",
-                "parser"
-            ],
-            "time": "2014-02-15 06:00:18"
-        },
-        {
             "name": "openpsa/universalfeedcreator",
             "version": "dev-master",
             "source": {
@@ -213,126 +154,17 @@
             "time": "2013-11-10 09:00:22"
         },
         {
-            "name": "symfony/console",
-            "version": "v2.4.4",
-            "target-dir": "Symfony/Component/Console",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/Console.git",
-                "reference": "2e452005b1e1d003d23702d227e23614679eb5ca"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/2e452005b1e1d003d23702d227e23614679eb5ca",
-                "reference": "2e452005b1e1d003d23702d227e23614679eb5ca",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3"
-            },
-            "require-dev": {
-                "symfony/event-dispatcher": "~2.1"
-            },
-            "suggest": {
-                "symfony/event-dispatcher": ""
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.4-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Symfony\\Component\\Console\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com",
-                    "homepage": "http://fabien.potencier.org",
-                    "role": "Lead Developer"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "http://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony Console Component",
-            "homepage": "http://symfony.com",
-            "time": "2014-04-27 13:34:57"
-        },
-        {
-            "name": "symfony/options-resolver",
-            "version": "v2.4.4",
-            "target-dir": "Symfony/Component/OptionsResolver",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/OptionsResolver.git",
-                "reference": "de261aa6d0e5d21583f5ae7e68f3d95f90bbd771"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/OptionsResolver/zipball/de261aa6d0e5d21583f5ae7e68f3d95f90bbd771",
-                "reference": "de261aa6d0e5d21583f5ae7e68f3d95f90bbd771",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.4-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Symfony\\Component\\OptionsResolver\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com",
-                    "homepage": "http://fabien.potencier.org",
-                    "role": "Lead Developer"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "http://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony OptionsResolver Component",
-            "homepage": "http://symfony.com",
-            "keywords": [
-                "config",
-                "configuration",
-                "options"
-            ],
-            "time": "2014-04-16 10:34:31"
-        },
-        {
             "name": "twig/twig",
-            "version": "v1.15.1",
+            "version": "v1.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fabpot/Twig.git",
-                "reference": "1fb5784662f438d7d96a541e305e28b812e2eeed"
+                "reference": "8ce37115802e257a984a82d38254884085060024"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fabpot/Twig/zipball/1fb5784662f438d7d96a541e305e28b812e2eeed",
-                "reference": "1fb5784662f438d7d96a541e305e28b812e2eeed",
+                "url": "https://api.github.com/repos/fabpot/Twig/zipball/8ce37115802e257a984a82d38254884085060024",
+                "reference": "8ce37115802e257a984a82d38254884085060024",
                 "shasum": ""
             },
             "require": {
@@ -341,7 +173,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.15-dev"
+                    "dev-master": "1.16-dev"
                 }
             },
             "autoload": {
@@ -376,24 +208,15 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2014-02-13 10:19:29"
+            "time": "2014-07-05 12:19:05"
         }
     ],
-    "packages-dev": [
-
-    ],
-    "aliases": [
-
-    ],
+    "packages-dev": [],
+    "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "kzykhys/ciconia": 20,
         "openpsa/universalfeedcreator": 20
     },
-    "platform": [
-
-    ],
-    "platform-dev": [
-
-    ]
+    "platform": [],
+    "platform-dev": []
 }

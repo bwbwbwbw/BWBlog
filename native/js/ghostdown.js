@@ -7539,7 +7539,8 @@ if (typeof exports === 'object') {
       pedantic: false,
       sanitize: false,
       smartLists: true,
-      smartypants: false
+      smartypants: false,
+      langPrefix: 'prettyprint lang-'
     });
 
   $(function() {

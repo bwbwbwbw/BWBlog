@@ -127,6 +127,12 @@ Your blog title.
 
 Your Disqus shortname for the blog. Disqus is used to provide comment services in BWBlog. [What's a shortname](http://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-).
 
+#### P_HTML_FILTER
+
+Filter dangerous HTML tags when publishing (for example, `<script>`).
+
+Default: `false`
+
 #### MONGO_PREFIX
 
 Database collection prefix.

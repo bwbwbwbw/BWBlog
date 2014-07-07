@@ -7,7 +7,7 @@ const APP_VERSION        = '0.0.1 beta';    // do not change
 
 //============================
 // Manage
-const ADMIN_USER         = 'swx';                       // admin username
+const ADMIN_USER         = 'swx';           // admin username
 const ADMIN_PASS         = '0000000000000000000000000000000000000000';
 // SHA1 your password for 12 times, then replace the value here
 
@@ -27,6 +27,7 @@ const P_THEME            = 'default';       // the theme to use
 const P_POSTS_PER_PAGE   = 10;              // show how many posts per page
 const P_TITLE            = 'My Blog';       // your blog title
 const P_DISQUS_ID        = 'example';       // your Disqus shortname
+const P_HTML_FILTER      = false;           // whether filter HTML tags when publishing
 
 //============================
 // Database

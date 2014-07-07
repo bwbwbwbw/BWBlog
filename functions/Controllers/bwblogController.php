@@ -71,6 +71,10 @@ class bwblogController
                 throw new \Exception('Missing argument: markdown');
             }
 
+            if (!isset($_POST['html'])) {
+                throw new \Exception('Missing argument: html');
+            }
+
             if (!isset($_POST['category'])) {
                 throw new \Exception('Missing argument: category');
             }
@@ -104,6 +108,7 @@ class bwblogController
             die(json_encode(\BWBlog\Post::edit(
                 $_POST['title'],
                 $_POST['markdown'],
+                $_POST['html'],
                 $_POST['url'],
                 $time,
                 $_POST['category'],

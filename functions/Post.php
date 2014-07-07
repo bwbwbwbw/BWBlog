@@ -11,7 +11,8 @@ class Post
 
     public static function create(
         $title, 
-        $content, 
+        $md, 
+        $html, 
         $url,  
         $time       = null,
         $category   = null, 
@@ -49,13 +50,14 @@ class Post
             'time.main' => -1
         ]);
 
-        return self::edit($title, $content, $url, $time, $category, $tags, $state);
+        return self::edit($title, $md, $html, $url, $time, $category, $tags, $state);
 
     }
 
     public static function edit(
         $title, 
-        $content, 
+        $md, 
+        $html, 
         $url,  
         $time       = null,
         $category   = null, 
@@ -73,8 +75,10 @@ class Post
             $time = time();
         }
 
-        $html = \BWBlog\Escaper::markdown($content, false); // do not purify
-
+        if (P_HTML_FILTER) {
+            $html = \BWBlog\Escaper::purify($html);
+        }
+        
         // page doesn't need short introductions
         if ($state != self::STATE_PAGE) {
             
@@ -113,7 +117,7 @@ class Post
         $doc = [
             'title'     => $title,
             'content'   => [
-                'markdown'  => $content,
+                'markdown'  => $md,
                 'html'      => $html,
                 'introhtml' => $intro,
                 'more'      => $more
