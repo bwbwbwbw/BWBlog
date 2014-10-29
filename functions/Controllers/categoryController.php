@@ -7,11 +7,11 @@ class categoryController
 
     public static function initialize($param)
     {
-
+        
         $category = strtolower($param['action']);
-        $page = (int)($param['parameter'] || '1');
+        $page = (int)($param['parameter'] ?: '1');
         $pages = ceil(\BWBlog\Post::count(['lcategory' => $category]) / P_POSTS_PER_PAGE);
-        $posts = \BWBlog\Post::list_all(['lcategory' => $category], $pages);
+        $posts = \BWBlog\Post::list_all(['lcategory' => $category], $page);
 
         \BWBlog\Service\Template::render('pages/list', [
             'POSTS'      => $posts,

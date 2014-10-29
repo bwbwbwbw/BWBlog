@@ -9,7 +9,7 @@ class tagController
     {
 
         $tag = strtolower($param['action']);
-        $page = (int)($param['parameter'] || '1');
+        $page = (int)($param['parameter'] ?: '1');
         $pages = ceil(\BWBlog\Post::count(['ltags' => $tag]) / P_POSTS_PER_PAGE);
         $posts = \BWBlog\Post::list_all(['ltags' => $tag], $page);
 

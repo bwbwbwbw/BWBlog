@@ -249,7 +249,7 @@ class Post
         ])->sort([
             'time.main'         => -1
         ]);
-
+        
         if ($page_size > 0) {
             $cursor = $cursor->skip(($page - 1) * $page_size)->limit($page_size);
         }
