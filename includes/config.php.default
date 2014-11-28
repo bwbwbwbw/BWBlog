@@ -20,6 +20,8 @@ const CONFIG_TIMEZONE    = 'Asia/Shanghai'; // time zone
 const CONFIG_DATE_FORMAT = 'dS F, Y';       // date format
 const CONFIG_TIME_FORMAT = 'h:i:s A';       // time format
 // Preferences
+const P_CDN              = false;           // set true to enable CDN rewrite
+const P_CDN_PREFIX       = '';              // the CDN path+prefix
 const P_PREFIX           = '';              // if not in root directory, please modify its value.
                                             // for example, if your blog is example.com/blog,
                                             // set the value to '/blog'

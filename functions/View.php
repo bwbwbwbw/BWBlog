@@ -18,7 +18,11 @@ class View
             }
         }
 
-        $output = P_PREFIX.$file;
+        if (!P_CDN) {
+            $output = P_PREFIX.$file;
+        } else {
+            $output = P_CDN_PREFIX.$file;
+        }
 
         $fp = ROOT_DIR.$file;
 
