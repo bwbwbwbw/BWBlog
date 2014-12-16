@@ -38,7 +38,7 @@
             title:    $('.role-title').val(),
             url:      $('.role-url').val(),
             markdown: window.editor.getValue(),
-            html:     document.getElementsByClassName('rendered-markdown')[0].innerHTML,
+            //html:     document.getElementsByClassName('rendered-markdown')[0].innerHTML,
             category: $('.role-category').val(),
             tags:     $('.role-tags').val(),
             time:     $('.role-time').val()

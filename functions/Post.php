@@ -11,8 +11,7 @@ class Post
 
     public static function create(
         $title, 
-        $md, 
-        $html, 
+        $md,  
         $url,  
         $time       = null,
         $category   = null, 
@@ -50,15 +49,14 @@ class Post
             'time.main' => -1
         ]);
 
-        return self::edit($title, $md, $html, $url, $time, $category, $tags, $state);
+        return self::edit($title, $md, $url, $time, $category, $tags, $state);
 
     }
 
     public static function edit(
-        $title, 
-        $md, 
-        $html, 
-        $url,  
+        $title,
+        $md,
+        $url,
         $time       = null,
         $category   = null, 
         $tags       = [], 
@@ -74,6 +72,12 @@ class Post
         if ($time == null) {
             $time = time();
         }
+
+        \Marked\Marked::setOptions([
+            'langPrefix' => 'prettyprint lang-'
+        ]);
+
+        $html = \Marked\Marked::render($md);
 
         if (P_HTML_FILTER) {
             $html = \BWBlog\Escaper::purify($html);
