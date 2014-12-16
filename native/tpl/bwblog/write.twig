@@ -1,8 +1,5 @@
 {% set BODY_CLASS = 'main' %}
 {% extends "layout.twig" %}
-{% block header %}
-<link href="{{ view_static('/css/ghostdown.css') }}" rel="stylesheet" type="text/css" charset="UTF-8" />
-{% endblock %}
 {% block content %}
 {% if POST is defined %}
 {% if POST._id is defined %}
@@ -17,13 +14,11 @@
 <div class="outer">
 <div class="editorwrap">
     <section class="entry-markdown">
-        <header class="floatingheader">Markdown</header>
         <section class="entry-markdown-content">
-        <textarea id="entry-markdown">{% if POST.content.markdown is defined %}{{ POST.content.markdown }}{% endif %}</textarea>
+        <div id="entry-markdown">{% if POST.content.markdown is defined %}{{ POST.content.markdown }}{% endif %}</div>
         </section>
     </section>
-    <section class="entry-preview active">
-        <header class="floatingheader">Preview <span class="entry-word-count">0 words</span></header>
+    <section class="entry-preview">
         <section class="entry-preview-content">
             <div class="rendered-markdown"></div>
         </section>
@@ -35,6 +30,8 @@
 <div class="write-bottom"><span class="icon-category"></span><input type="text" class="textbox role-category" placeholder="Category"{% if POST.category is defined %} value="{{ POST.category }}"{% endif %}><span class="icon-tag"></span><input type="text" class="textbox role-tags" placeholder="Tags (separate with comma ',')"{% if POST.tags is defined %} value="{{ POST.tags|join(', ') }}"{% endif %}><span class="icon-time"></span><input type="text" class="textbox role-time" placeholder="YYYY-MM-DD H:M:S" value="{% if POST.title is defined %}{{ POST.time.main|date('Y-m-d H:i:s') }}{% else %}{{ null|date('Y-m-d H:i:s') }}{% endif %}"><input class="button button-def role-publish" type="button" value="PUBLISH"> <a href="javascript:;" class="role-save-draft">Save as draft</a> / <a href="javascript:;" class="role-save-page">Save as page</a></div>
 {% endblock %}
 {% block footer %}
-<script type="text/javascript" src="{{ view_static('/js/ghostdown.js') }}"></script>
+<script type="text/javascript" src="//cdnjs.net/ajax/libs/ace/1.1.3/ace.js"></script>
+<script type="text/javascript" src="//cdnjs.net/ajax/libs/marked/0.3.2/marked.min.js"></script>
+<script type="text/javascript" src="//cdnjs.net/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
 <script type="text/javascript" src="{{ view_static('/js/write.js') }}"></script>
 {% endblock %}
