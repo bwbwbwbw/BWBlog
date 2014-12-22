@@ -187,7 +187,13 @@ RewriteBase /my/blog/
 
 ### Nginx
 
-//TODO
+```
+location / {
+    if (!-e $request_filename) {
+        rewrite . /index.php last;
+    }
+}
+```
 
 ## Themes
 
