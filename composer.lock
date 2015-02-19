@@ -1,22 +1,23 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
     ],
-    "hash": "7d84e2d47d7fbe5b0aee7868335dba29",
+    "hash": "ebbfca582b91354993676b17e48fc1be",
     "packages": [
         {
             "name": "breeswish/php-marked",
-            "version": "dev-master",
+            "version": "v0.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/breeswish/php-marked.git",
-                "reference": "7baea74b95bcfa53603f784c7a2b82787f4f4ebb"
+                "reference": "b67fe5bdc90beb877e03974a899e98f856e0006d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/breeswish/php-marked/zipball/7baea74b95bcfa53603f784c7a2b82787f4f4ebb",
-                "reference": "7baea74b95bcfa53603f784c7a2b82787f4f4ebb",
+                "url": "https://api.github.com/repos/breeswish/php-marked/zipball/b67fe5bdc90beb877e03974a899e98f856e0006d",
+                "reference": "b67fe5bdc90beb877e03974a899e98f856e0006d",
                 "shasum": ""
             },
             "require": {
@@ -24,8 +25,8 @@
             },
             "type": "library",
             "autoload": {
-                "psr-0": {
-                    "": "src/"
+                "psr-4": {
+                    "Breezewish\\Marked\\": "src/Marked"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -44,7 +45,7 @@
                 "marked",
                 "parser"
             ],
-            "time": "2014-07-08 09:41:30"
+            "time": "2015-02-19 07:47:15"
         },
         {
             "name": "ezyang/htmlpurifier",
@@ -196,16 +197,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v1.16.2",
+            "version": "v1.18.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "42f758d9fe2146d1f0470604fc05ee43580873fc"
+                "reference": "4cf7464348e7f9893a93f7096a90b73722be99cf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/42f758d9fe2146d1f0470604fc05ee43580873fc",
-                "reference": "42f758d9fe2146d1f0470604fc05ee43580873fc",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/4cf7464348e7f9893a93f7096a90b73722be99cf",
+                "reference": "4cf7464348e7f9893a93f7096a90b73722be99cf",
                 "shasum": ""
             },
             "require": {
@@ -214,7 +215,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.16-dev"
+                    "dev-master": "1.18-dev"
                 }
             },
             "autoload": {
@@ -240,7 +241,7 @@
                 },
                 {
                     "name": "Twig Team",
-                    "homepage": "https://github.com/fabpot/Twig/graphs/contributors",
+                    "homepage": "http://twig.sensiolabs.org/contributors",
                     "role": "Contributors"
                 }
             ],
@@ -249,16 +250,16 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2014-10-17 12:53:44"
+            "time": "2015-01-25 17:32:08"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "openpsa/universalfeedcreator": 20,
-        "breeswish/php-marked": 20
+        "openpsa/universalfeedcreator": 20
     },
+    "prefer-stable": false,
     "platform": [],
     "platform-dev": []
 }

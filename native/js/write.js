@@ -4,7 +4,10 @@
     function renderPreview()
     {
         var markdown = editor.getValue();
-        var html = marked(markdown);
+        var html = marked(markdown, {
+            'langPrefix': 'prettyprint lang-',
+            'breaks': true,
+        });
         $('.rendered-markdown').html(html);
     }
 

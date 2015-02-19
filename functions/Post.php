@@ -73,11 +73,10 @@ class Post
             $time = time();
         }
 
-        \Marked\Marked::setOptions([
-            'langPrefix' => 'prettyprint lang-'
+        $html = \Breezewish\Marked\Marked::render($md, [
+            'langPrefix' => 'prettyprint lang-',
+            'breaks' => true,
         ]);
-
-        $html = \Marked\Marked::render($md);
 
         if (P_HTML_FILTER) {
             $html = \BWBlog\Escaper::purify($html);

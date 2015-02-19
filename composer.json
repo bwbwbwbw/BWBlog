@@ -4,6 +4,6 @@
         "filp/whoops": "1.*",
         "twig/twig": "1.*",
         "openpsa/universalfeedcreator": "dev-master",
-        "breeswish/php-marked": "dev-master"
+        "breeswish/php-marked": "~0.3"
     }
 }
