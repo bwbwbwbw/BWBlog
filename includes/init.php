@@ -46,7 +46,7 @@ if (ENV_HOST != CONFIG_HOST) {
 }
 
 if (CONFIG_ENFORCESSL) {
-    header('Strict-Transport-Security: max-age=2592000');
+    header('Strict-Transport-Security: max-age=10886400; includeSubDomains; preload');
 }
 
 if (!ENV_SSL && CONFIG_ENFORCESSL) {
