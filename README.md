@@ -1,3 +1,4 @@
+
 BWBlog
 ======
 
@@ -20,7 +21,7 @@ MongoDB >= 2.2
 ## Setup
 
 1. Use Composer to install dependencies:
-   
+
    ```
    php composer.phar install
    ```
@@ -139,29 +140,15 @@ Database collection prefix.
 
 Default: `blog-`
 
-#### MONGO_PATH
+#### MONGO_CONNECTION
 
-The MongoDB connection path. Specific host and port here.
+The MongoDB connection path. See [MongoDB Doc](https://docs.mongodb.com/manual/reference/connection-string/) for details.
 
 Default: `mongodb://127.0.0.1:27017`
 
 #### MONGO_DB
 
 The Database name.
-
-#### MONGO_USERNAME
-
-Database username.
-
-#### MONGO_PASSWORD
-
-Database password.
-
-#### MONGO_TIMEOUT
-
-Database connection timeout(ms).
-
-Default: `2000`
 
 ## Web Server Configuration
 
