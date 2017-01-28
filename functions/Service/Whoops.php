@@ -21,6 +21,6 @@ class Whoops
 
         $run->pushHandler($handler);
         $run->register();
-        
+
     }
 }

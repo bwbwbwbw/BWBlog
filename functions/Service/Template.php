@@ -29,14 +29,14 @@ class Template
             'cache'         => ROOT_DIR.'/runtime/twig_cache',
             'debug'         => true,
             'charset'       => 'UTF-8',
-            'autoescape'    => true
+            'autoescape'    => 'html_attr',
         ]);
 
         self::$_twig->addFunction(new \Twig_SimpleFunction('view_static', '\BWBlog\View::view_static'));
         self::$_twig->addFunction(new \Twig_SimpleFunction('view_processTime', '\BWBlog\View::view_processTime'));
         self::$_twig->addFunction(new \Twig_SimpleFunction('get_catalogs', '\BWBlog\View::view_getCatalogs'));
         self::$_twig->addFunction(new \Twig_SimpleFunction('get_tags', '\BWBlog\View::view_getTags'));
-        
+
         self::$_twig->addFilter(new \Twig_SimpleFilter('json', '\BWBlog\Escaper::json'));
         self::$_twig->addFilter(new \Twig_SimpleFilter('date', '\BWBlog\Utils::formatDate'));
         self::$_twig->addFilter(new \Twig_SimpleFilter('time', '\BWBlog\Utils::formatTime'));
@@ -69,5 +69,5 @@ class Template
         echo self::$_twig->render($template.'.twig', $var);
 
     }
-    
+
 }

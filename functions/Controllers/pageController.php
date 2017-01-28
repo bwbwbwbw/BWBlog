@@ -9,7 +9,7 @@ class pageController
     {
 
         if (is_numeric($param['action'])) {
-            
+
             // page/1
 
             $page = (int)$param['action'];
@@ -41,7 +41,7 @@ class pageController
             ]);
 
         }
-        
+
 
         return false;
     }

@@ -34,8 +34,5 @@ const P_HTML_FILTER      = false;           // whether filter HTML tags when pub
 //============================
 // Database
 const MONGO_PREFIX       = 'blog-';                     // Collection prefix
-const MONGO_PATH         = 'mongodb://127.0.0.1:27017'; // connect string
+const MONGO_CONNECTION   = 'mongodb://127.0.0.1:27017'; // connect string
 const MONGO_DB           = 'swx';                       // database name
-const MONGO_USERNAME     = 'swx';                       // auth username
-const MONGO_PASSWORD     = 'swx';                       // auth password
-const MONGO_TIMEOUT      = 2000;                        // connect timeout

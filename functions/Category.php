@@ -7,31 +7,21 @@ class Category
 
     public static function list_all($condition = [], $show_all = false)
     {
-
         if ($show_all !== true) {
             $condition['state'] = \BWBlog\Post::STATE_OPEN;
         }
 
         global $db;
-        $r= $db->selectCollection(MONGO_PREFIX.'posts')->group([
-            'category' => 1
-        ],[
-            'count' => 0
-        ],
-        'function(obj, prev)
-        {
-            prev.count++;
-        }',[
-            'condition' => $condition
+        $cursor = $db->selectCollection(MONGO_PREFIX.'posts')->aggregate([
+            ['$match' => $condition],
+            ['$group' => ['_id' => '$category', 'count' => ['$sum' => 1]]],
         ]);
 
-        $r = $r['retval'];
-
         $result = [];
-        foreach ($r as $catalog) {
+        foreach ($cursor as $doc) {
             $result[] = [
-                'name'  => $catalog['category'],
-                'count' => $catalog['count']
+                'name'  => $doc['_id'],
+                'count' => $doc['count']
             ];
         }
 

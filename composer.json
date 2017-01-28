@@ -1,9 +1,10 @@
 {
     "require": {
         "ezyang/htmlpurifier": "4.*",
-        "filp/whoops": "1.*",
-        "twig/twig": "1.*",
+        "filp/whoops": "2.*",
+        "twig/twig": "2.*",
         "openpsa/universalfeedcreator": "dev-master",
-        "breeswish/php-marked": "~0.3"
+        "breeswish/php-marked": "~0.3",
+        "mongodb/mongodb": "^1.1"
     }
 }

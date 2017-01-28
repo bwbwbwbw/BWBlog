@@ -10,12 +10,12 @@ class Post
     const STATE_PAGE  = 2;
 
     public static function create(
-        $title, 
-        $md,  
-        $url,  
+        $title,
+        $md,
+        $url,
         $time       = null,
-        $category   = null, 
-        $tags       = [], 
+        $category   = null,
+        $tags       = [],
         $state      = self::STATE_OPEN
     )
     {
@@ -58,8 +58,8 @@ class Post
         $md,
         $url,
         $time       = null,
-        $category   = null, 
-        $tags       = [], 
+        $category   = null,
+        $tags       = [],
         $state      = self::STATE_OPEN,
         $id         = null
     )
@@ -81,10 +81,10 @@ class Post
         if (P_HTML_FILTER) {
             $html = \BWBlog\Escaper::purify($html);
         }
-        
+
         // page doesn't need short introductions
         if ($state != self::STATE_PAGE) {
-            
+
             // process introduction
             foreach (['<!-- more -->', '<!--more -->', '<!-- more-->', '<!--more-->'] as $meta) {
                 $pos = mb_stripos($html, $meta, 0, 'UTF-8');
@@ -116,7 +116,7 @@ class Post
             $rest_url = \BWBlog\Utils::trimRestURI(str_replace('\\', '/', 'page/'.$url));
 
         }
-        
+
         $doc = [
             'title'     => $title,
             'content'   => [
@@ -147,11 +147,11 @@ class Post
             $db->selectCollection(MONGO_PREFIX.'posts')->insert($doc);
 
             return $doc['_id'];
-    
+
         } else {
 
             // update
-            
+
             $doc['time']['edit'] = time();
             $result = $db->selectCollection(MONGO_PREFIX.'posts')->findAndModify([
                 '_id'    => new \MongoId((string)$id)
@@ -167,9 +167,9 @@ class Post
             return $result['_id'];
 
         }
-        
+
     }
-    
+
     public static function getById($id)
     {
 
@@ -206,7 +206,7 @@ class Post
         }
 
         global $db;
-        $count = $db->selectCollection(MONGO_PREFIX.'posts')->find($condition)->count();
+        $count = $db->selectCollection(MONGO_PREFIX.'posts')->count($condition);
 
         return $count;
 
@@ -217,9 +217,12 @@ class Post
 
         global $db;
         $cursor = $db->selectCollection(MONGO_PREFIX.'posts')->find($condition, [
-            'content'      => 0
-        ])->sort([
-            'time.main'    => -1
+            'projection' => [
+                'content'      => 0,
+            ],
+            'sort' => [
+                'time.main'    => -1,
+            ],
         ]);
 
         $result = [];
@@ -245,17 +248,22 @@ class Post
             $page = 1;
         }
 
-        global $db;
-        $cursor = $db->selectCollection(MONGO_PREFIX.'posts')->find($condition, [
-            //'content.html'      => 0,     // for feed purpose
-            'content.markdown'  => 0
-        ])->sort([
-            'time.main'         => -1
-        ]);
-        
+        $opt = [
+            'projection' => [
+                //'content.html'      => 0,     // for feed purpose
+                'content.markdown'  => 0
+            ],
+            'sort' => [
+                'time.main'         => -1
+            ],
+        ];
         if ($page_size > 0) {
-            $cursor = $cursor->skip(($page - 1) * $page_size)->limit($page_size);
+            $opt['skip'] = ($page - 1) * $page_size;
+            $opt['limit'] = $page_size;
         }
+
+        global $db;
+        $cursor = $db->selectCollection(MONGO_PREFIX.'posts')->find($condition, $opt);
 
         $result = [];
 

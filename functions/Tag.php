@@ -13,23 +13,21 @@ class Tag
         }
 
         global $db;
-        $r = $db->selectCollection(MONGO_PREFIX.'posts')->aggregate([
-        ['$match' => $condition],
-        ['$project' => ['tags' => 1]],
-        ['$unwind' => '$tags'],
-        ['$group' => [
-            '_id'   => '$tags',
-            'count' => ['$sum' => 1]
-        ]]
+        $cursor = $db->selectCollection(MONGO_PREFIX.'posts')->aggregate([
+            ['$match' => $condition],
+            ['$project' => ['tags' => 1]],
+            ['$unwind' => '$tags'],
+            ['$group' => [
+                '_id'   => '$tags',
+                'count' => ['$sum' => 1]
+            ]]
         ]);
 
-        $r = $r['result'];
-
         $result = [];
-        foreach ($r as $tag) {
+        foreach ($cursor as $doc) {
             $result[] = [
-                'name'  => $tag['_id'],
-                'count' => $tag['count']
+                'name'  => $doc['_id'],
+                'count' => $doc['count']
             ];
         }
 
